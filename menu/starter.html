@@ -17,12 +17,14 @@
          while(index >= 0){
           var item = starters[index];
           var $item = $('<div class="starters" id="myDiv"></div>');
-          x = item.name + " ............ " + item.price + "JD"
+          var link=$('<a href="https://twitter.com/login">Add to Cart</a>')
+          x = item.name + " ................." + item.price + "JD  "
           
           $item.text(x);
           $item.appendTo($body);
+          $($item).append(link);
        
-          $('.starters').append($item)
+          
           index -= 1;
         }
     });

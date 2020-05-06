@@ -5,6 +5,31 @@
 	<link rel="stylesheet" type="text/css" href="itemStyle.css">
 </head>
 <body>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script type="text/javascript" src ="script.js"></script>
+    <script type="text/javascript">
+    	$(document).ready(function(){
+        var $body = $('body');
+        $body.html('');
+    	
+    	var index = drinks.length - 1;
+          var x = " "
+         while(index >= 0){
+          var drink = drinks[index];
+          var $drink = $('<div class="drinks" id="myDiv"></div>');
+          var link=$('<a href="https://twitter.com/login">Add to Cart</a>')
 
+
+          x = drink.name + " ....................... " + drink.price + " JD   " 
+          
+          $drink.text(x);
+          $drink.appendTo($body);
+          $($drink).append(link);
+          
+
+          index -= 1;
+        }
+    });
+    </script>
 </body>
 </html>

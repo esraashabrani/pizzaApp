@@ -5,6 +5,28 @@
 	<link rel="stylesheet" type="text/css" href="itemStyle.css">
 </head>
 <body>
-
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script type="text/javascript" src ="script.js"></script>
+    <script type="text/javascript">
+    	$(document).ready(function(){
+        var $body = $('body');
+        $body.html('');
+    	
+    	var index = salad.length - 1;
+          var x = " "
+         while(index >= 0){
+          var item = salad[index];
+          var $item = $('<div class="starters" id="myDiv"></div>');
+          var link=$('<a href="https://twitter.com/login">Add to Cart</a>')
+          x = item.name + " ....................... " + item.price + " JD   "
+          
+          $item.text(x);
+          $item.appendTo($body);
+          $($item).append(link);
+          
+          index -= 1;
+        }
+    });
+    </script>
 </body>
 </html>
