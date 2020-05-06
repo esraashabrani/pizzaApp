@@ -63,3 +63,11 @@ body {
   padding: 25px;
 
 }
+
+#header{
+	margin-left:930px;
+	font-weight: 200;
+	color: white;
+	font-size: 30px;
+	font-family: monospace;
+}
