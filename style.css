@@ -1,0 +1,65 @@
+body {
+  background-image: url('background.jpg');
+  background-repeat: no-repeat;
+    background-attachment: fixed;
+  background-size: cover;
+}
+
+#logo{
+	margin-left:1235px;
+	width: 100px;
+
+}
+
+.account{
+	margin-top: -70px;
+	margin-left:800px;
+	font-size: 30px;
+	color: white;
+	font-family: monospace;
+	
+
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+}
+
+
+.inner {
+  overflow: hidden;
+  
+}
+
+
+.inner a {
+  float: left;
+  display: block;
+  color: #f2f2f2;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+}
+
+/* Change color on hover */
+.inner a:hover {
+  background-color: #ddd;
+  color: black;
+}
+
+
+.row {
+  display: flex;
+  margin-left: 800px;
+  padding: 25px
+}
+
+.column {
+  flex: 33.33%;
+  padding: 25px;
+
+}
