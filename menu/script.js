@@ -70,3 +70,12 @@ var pizza=[{
 }
 ];
 
+window.pizzaOrder=[];
+window.drinksOrder=[];
+var saladOrder=[];
+var startersOrder=[];
+window.order = [];
+
+
+
+

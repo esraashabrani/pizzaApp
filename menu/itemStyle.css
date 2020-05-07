@@ -28,3 +28,10 @@ a{
 	color: white
 }
 
+input[type=number]{
+    width: 30px;
+}
+#save{
+	margin-left: 700px;
+}
+
