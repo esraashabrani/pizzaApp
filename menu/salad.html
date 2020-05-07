@@ -1,31 +1,78 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title>Salad</title>
-	<link rel="stylesheet" type="text/css" href="itemStyle.css">
+  <title>Salad</title>
+  <link rel="stylesheet" type="text/css" href="itemStyle.css">
 </head>
 <body>
-	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
     <script type="text/javascript" src ="script.js"></script>
     <script type="text/javascript">
-    	$(document).ready(function(){
+      $(document).ready(function(){
         var $body = $('body');
         $body.html('');
-    	
-    	var index = salad.length - 1;
+      var index = salad.length - 1;
           var x = " "
          while(index >= 0){
           var item = salad[index];
           var $item = $('<div class="starters" id="myDiv"></div>');
-          var link=$('<a href="https://twitter.com/login">Add to Cart</a>')
+          var link=$('<br><input type="checkbox" id='+ index +' value="order" name="salad"><label for="salad"> Order </label><label> Qty </label><input type="number" min ="0" id='+ (index+30) +'>')
           x = item.name + " ....................... " + item.price + " JD   "
-          
           $item.text(x);
           $item.appendTo($body);
           $($item).append(link);
-          
           index -= 1;
         }
+          $("#1").click(function(){
+          var quantity = document.getElementById('31').value
+            if(quantity===""){
+            alert("Please select the quantity before order")
+            return false;
+          }
+            saladOrder.push({
+              name : salad[1]['name'],
+              price : salad[1]['price'],
+              qty : quantity
+            })
+          })
+        $("#0").click(function(){
+          var quantity = document.getElementById('30').value
+            if(quantity===""){
+            alert("Please select the quantity before order")
+            return false;
+          }
+            saladOrder.push({
+              name : salad[0]['name'],
+              price : salad[0]['price'],
+              qty : quantity
+            })
+          })
+         var $button = $('<button id="save" width="500px">save</button>');
+          $button.appendTo($body);
+          function each(coll, f) {
+             if (Array.isArray(coll)) { 
+            for (var i = 0; i < coll.length; i++) { 
+               f(coll[i], i); //it will be called for each element
+           } 
+          } else { 
+           for (var key in coll) { 
+            f(coll[key], key); 
+             } 
+           } 
+         }
+             function reduce(array, f, start) {
+              var acc = start;
+              each(array, function(element) {
+                acc = f(acc, element);
+              });
+              return acc;
+            }
+             var total = reduce(saladOrder,function(result,ele){
+                       return result + ele['price']
+                 },0)
+          $('#save').click(function(){
+                 alert("successfull");
+          })
     });
     </script>
 </body>

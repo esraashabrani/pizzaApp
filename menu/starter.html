@@ -17,7 +17,7 @@
          while(index >= 0){
           var item = starters[index];
           var $item = $('<div class="starters" id="myDiv"></div>');
-          var link=$('<a href="https://twitter.com/login">Add to Cart</a>')
+           var link=$('<br><input type="checkbox" id='+ index +' value="startersOrder" name="starters"><label for="starters"> Order </label><label> Qty </label><input type="number" min ="0" id='+ (index+20) +'>')
           x = item.name + " ................." + item.price + "JD  "
           
           $item.text(x);
@@ -27,6 +27,103 @@
           
           index -= 1;
         }
+        $("#4").click(function(){
+          var quantity =document.getElementById("24").value
+          if(quantity===""){
+            alert("Please select the quantity before Order")
+            return false;
+          }
+            startersOrder.push({
+              name : starters[4]['name'],
+              price : starters[4]['price'],
+              qty : quantity
+            })
+          })
+         $("#3").click(function(){
+          var quantity = document.getElementById('23').value
+            if(quantity===""){
+            alert("Please select the quantity before Order")
+            return false;
+          }
+            startersOrder.push({
+              name : starters[3]['name'],
+              price : starters[3]['price'],
+              qty : quantity
+            })
+
+
+          })
+         $("#2").click(function(){
+          var quantity = document.getElementById('22').value
+            if(quantity===""){
+            alert("Please select the quantity before Order")
+            return false;
+          }
+            startersOrder.push({
+              name : starters[2]['name'],
+              price : starters[2]['price'],
+              qty : quantity
+            })
+            
+
+          })
+          $("#1").click(function(){
+          var quantity = document.getElementById('21').value
+            if(quantity===""){
+            alert("Please select the quantity before Order")
+            return false;
+          }
+            startersOrder.push({
+              name : starters[1]['name'],
+              price : starters[1]['price'],
+              qty : quantity
+            })
+         
+
+          })
+
+        $("#0").click(function(){
+          var quantity = document.getElementById('20').value
+            if(quantity===""){
+            alert("Please select the quantity before Order")
+            return false;
+          }
+            startersOrder.push({
+              name : starters[0]['name'],
+              price : starters[0]['price'],
+              qty : quantity
+            })
+
+
+          })
+           var $button = $('<button id="save" width="500px">save</button>');
+          $button.appendTo($body);
+          function each(coll, f) {
+             if (Array.isArray(coll)) { 
+            for (var i = 0; i < coll.length; i++) { 
+               f(coll[i], i); //it will be called for each element
+           } 
+          } else { 
+           for (var key in coll) { 
+            f(coll[key], key); 
+             } 
+           } 
+         }
+             function reduce(array, f, start) {
+              var acc = start;
+              each(array, function(element) {
+                acc = f(acc, element);
+              });
+              return acc;
+            }
+
+             var total = reduce(startersOrder,function(result,ele){
+                       return result + ele['price']
+                 },0)
+          $('#save').click(function(){
+                
+                 alert("successfull");
+          })
     });
     </script>
 </body>
